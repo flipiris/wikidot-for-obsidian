@@ -1,0 +1,2 @@
+# wikidot-for-obsidian
+一个面向wikidot用户，主要是SCP基金会中文维基创作者的Obsidian编辑插件，支持ftml源码显示与编辑、在线阅览与页面预览。非常不完整不成熟的许愿式vibe产物，但似乎具有一定可用性。
