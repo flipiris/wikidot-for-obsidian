@@ -1,3 +1,6 @@
+**重要声明**：目前本插件，包括所有代码与本文档的下文，没有半点手工成分，完全由Claude Opus 5.5、ChatGPT 6.1 Sol与Deepseek V4.1 Flash构建而成，经我个人体验，还算有用。我个人会努力在学习编程的过程中尝试对本插件进行手工迭代。
+以下是AI生成的文档。
+
 # Wikidot for Obsidian
 
 在 Obsidian 中编写 Wikidot 源码，边编辑边查看排版，完成后将源码复制到你的基金会草稿页。
