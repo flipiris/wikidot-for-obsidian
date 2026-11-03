@@ -1,0 +1,162 @@
+.flipiris-wikidot { display:flex; flex-direction:column; box-sizing:border-box; padding:1em !important; height:100%; overflow:hidden; }
+.wikidot-toolbar { display:flex; gap:6px; padding:10px; flex-wrap:wrap; align-items:center; border-bottom:1px solid var(--background-modifier-border); }
+.wikidot-toolbar button[aria-pressed="true"] { background:var(--interactive-accent); color:var(--text-on-accent); }
+.wikidot-toolbar select { max-width:160px; }
+.wikidot-form-error { color:var(--text-error); white-space:pre-wrap; }
+.wikidot-status { color:var(--text-muted); font-size:var(--font-ui-small); margin-left:auto; }
+.wikidot-panes { display:flex; flex:1; min-height:0; }
+.wikidot-native-editor.markdown-source-view.mod-cm6 { flex:1; width:100%; min-width:0; min-height:0; overflow-y:auto; position:relative; padding:var(--file-margins,32px); font-family:var(--editor-serif,var(--font-text)); font-size:var(--font-text-size); line-height:var(--pref-body-line-height,var(--line-height-normal)); color:var(--text-normal); }
+.wikidot-note-sizer { width:100%; max-width:var(--file-line-width,700px); margin-inline:auto; min-height:100%; padding-bottom:clamp(120px,24vh,260px); }
+.wikidot-native-editor .cm-editor { width:100%; min-height:240px; background:transparent; outline:none !important; }
+.wikidot-native-editor .cm-scroller { overflow:visible; font:inherit; }
+.wikidot-native-editor .cm-content { min-height:200px; caret-color:var(--text-normal); font-family:var(--editor-serif,var(--font-text)); font-size:var(--font-text-size); font-weight:var(--pref-body-weight,400); line-height:var(--pref-body-line-height,var(--line-height-normal)); letter-spacing:var(--pref-body-letter-spacing,normal); padding:var(--pref-editor-padding,0); text-align:justify; }
+.wikidot-native-editor .cm-line { padding-inline:0; }
+.wikidot-native-editor .cm-cursor { border-left-color:var(--text-normal); }
+.wikidot-native-editor .cm-selectionBackground { background:var(--text-selection) !important; }
+/* Live editing: text styles follow the theme's Markdown variables. */
+.wikidot-native-editor { --wd-box-border:var(--background-modifier-border); --wd-box-fill:var(--code-background,var(--background-secondary)); }
+.wikidot-native-editor .wd-live-strong { font-weight:var(--bold-weight,700); color:var(--bold-color,inherit); font-family:var(--fl-heavy-serif,inherit); }
+.wikidot-native-editor .wd-live-em { font-style:italic; color:var(--italic-color,inherit); }
+.wikidot-native-editor .wd-live-underline { text-decoration:underline; text-underline-offset:.16em; }
+.wikidot-native-editor .wd-live-strike { text-decoration:line-through; }
+.wikidot-native-editor .wd-live-link { color:var(--link-color,var(--text-accent)); text-decoration:underline; text-decoration-thickness:var(--link-decoration-thickness,auto); text-underline-offset:.16em; text-decoration-color:color-mix(in srgb,currentColor 35%,transparent); }
+.wikidot-native-editor .wd-live-code { font-family:var(--wd-syntax-font); font-size:var(--code-size,.875em); color:var(--code-normal,inherit); background:var(--code-background); border:1px solid var(--background-modifier-border); border-radius:var(--code-radius,4px); padding:.05em .3em; }
+.wikidot-native-editor .wd-live-literal { font-family:var(--wd-syntax-font); font-size:.92em; }
+.wikidot-native-editor .wd-live-footnote { color:var(--text-muted); font-size:.85em; vertical-align:super; }
+.wikidot-native-editor .wd-live-math { font-family:var(--wd-syntax-font); color:var(--text-accent); }
+.wikidot-native-editor .wd-live-comment { color:var(--text-faint); }
+.wikidot-native-editor .wd-live-heading { position:relative; font-family:var(--fl-heavy-serif,var(--h1-font,inherit)); text-align:left; text-wrap:balance; }
+.wikidot-native-editor .wd-live-h1 { font-size:var(--h1-size,1.6em); font-weight:var(--h1-weight,700); color:var(--h1-color,inherit); line-height:var(--h1-line-height,1.3); border-bottom:1.5px solid var(--fl-h1-rule,transparent); padding-bottom:.3em; }
+.wikidot-native-editor .wd-live-h2 { font-size:var(--h2-size,1.4em); font-weight:var(--h2-weight,700); color:var(--h2-color,inherit); line-height:var(--h2-line-height,1.3); }
+.wikidot-native-editor .wd-live-h3 { font-size:var(--h3-size,1.2em); font-weight:var(--h3-weight,700); color:var(--h3-color,inherit); line-height:var(--h3-line-height,1.3); }
+.wikidot-native-editor .wd-live-h4 { font-size:var(--h4-size,1.1em); font-weight:var(--h4-weight,700); color:var(--h4-color,inherit); }
+.wikidot-native-editor .wd-live-h5 { font-size:var(--h5-size,1em); font-weight:var(--h5-weight,700); color:var(--h5-color,inherit); }
+.wikidot-native-editor .wd-live-h6 { font-size:var(--h6-size,1em); font-weight:var(--h6-weight,700); color:var(--h6-color,inherit); }
+/* Heading marker sits at the right edge while the line is edited, as in Markdown. */
+.wikidot-native-editor .wd-live-heading-mark { position:absolute; right:0; opacity:var(--pref-header-marker-opacity,.5); color:inherit; font-family:var(--wd-syntax-font); font-size:.6em; font-weight:400; }
+.wikidot-native-editor .wd-live-quote { border-left:var(--blockquote-border-thickness,3px) solid var(--blockquote-border-color,var(--background-modifier-border)); background:var(--blockquote-background-color,transparent); color:var(--blockquote-color,inherit); padding-left:1em; }
+.wikidot-native-editor .wd-live-quote-2 { border-left-width:6px; padding-left:1.5em; }
+.wikidot-native-editor .wd-live-quote-3,.wikidot-native-editor .wd-live-quote-4 { border-left-width:9px; padding-left:2em; }
+.wikidot-native-editor .wd-live-dt { font-weight:var(--bold-weight,700); }
+.wikidot-native-editor .wd-live-code-line,.wikidot-native-editor .wd-live-table-line,.wikidot-native-editor .wd-live-fold-line,.wikidot-native-editor .wd-live-tag-source { font-family:var(--wd-syntax-font); font-size:.9em; text-align:left; }
+.wikidot-native-editor .wd-live-tag-source { color:var(--text-muted); }
+.wikidot-native-editor .wd-live-rule { position:relative; min-height:1.6em; }
+.wikidot-native-editor .wd-live-rule::after { content:""; position:absolute; left:0; right:0; top:50%; border-top:1px solid var(--background-modifier-border); pointer-events:none; }
+/* Framed blocks (div, collapsible, tabview…): drawn on the row itself, so the
+   frame adds no lines. Inner levels are painted inline by frameStyle(). */
+.wikidot-native-editor .cm-line.wd-live-box { position:relative; background-color:var(--wd-box-fill); border-left:1px solid var(--wd-box-border); border-right:1px solid var(--wd-box-border); }
+.wikidot-native-editor .cm-line.wd-live-box-top { border-top:1px solid var(--wd-box-border); border-top-left-radius:var(--radius-m,8px); border-top-right-radius:var(--radius-m,8px); padding-top:.45em; }
+.wikidot-native-editor .cm-line.wd-live-box-bottom { border-bottom:1px solid var(--wd-box-border); border-bottom-left-radius:var(--radius-m,8px); border-bottom-right-radius:var(--radius-m,8px); padding-bottom:.45em; }
+.wikidot-native-editor .cm-line.wd-live-box-inner-top { padding-top:.5em; }
+.wikidot-native-editor .cm-line.wd-live-box-inner-bottom { padding-bottom:.5em; }
+.wikidot-live-box-label { float:right; margin-left:1em; color:var(--text-faint); font:var(--font-ui-smaller,12px)/1.9 var(--font-interface); cursor:pointer; user-select:none; }
+.wikidot-live-box-label:hover { color:var(--text-muted); }
+/* MODULE / include / comment folds look like a bordered source token. */
+.wikidot-live-fold { display:inline-block; max-width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; vertical-align:bottom; color:var(--text-muted); font-family:var(--wd-syntax-font); font-size:.88em; line-height:1.6; background:var(--code-background,var(--background-secondary)); border:1px solid var(--background-modifier-border); border-radius:var(--radius-s,5px); padding:.12em .55em; margin:.15em 0; cursor:pointer; }
+.wikidot-live-fold:hover,.wikidot-live-fold:focus-visible { color:var(--text-normal); border-color:var(--background-modifier-border-hover,var(--background-modifier-border)); }
+.wikidot-live-fold-toggle { float:right; color:var(--text-faint); font:var(--font-ui-smaller,12px)/1.9 var(--font-interface); cursor:pointer; }
+.wikidot-live-fold-toggle:hover { color:var(--text-muted); }
+.wikidot-live-chip { display:inline-block; color:var(--text-muted); font:var(--font-ui-smaller,12px)/1.5 var(--wd-syntax-font); background:var(--background-modifier-hover,var(--background-secondary)); border-radius:4px; padding:0 .4em; cursor:pointer; }
+.wikidot-live-bullet { display:inline-block; min-width:1.4em; color:var(--list-marker-color,var(--text-muted)); }
+.wikidot-live-dd-sep { color:var(--text-faint); }
+/* [[toc]] */
+.wikidot-live-toc { display:inline-flex; flex-direction:column; min-width:12em; max-width:100%; vertical-align:top; text-align:left; font:var(--font-ui-small,13px)/1.7 var(--font-interface); background:var(--code-background,var(--background-secondary)); border:1px solid var(--background-modifier-border); border-radius:var(--radius-m,8px); padding:.4em .9em .5em; }
+.wikidot-live-toc.is-float-right { float:right; margin-left:1em; }
+.wikidot-live-toc.is-float-left { float:left; margin-right:1em; }
+.wikidot-live-toc-title { font-weight:700; color:var(--text-normal); cursor:pointer; }
+.wikidot-live-toc-item { color:var(--link-color,var(--text-accent)); cursor:pointer; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.wikidot-live-toc-item:hover { text-decoration:underline; }
+.wikidot-live-toc-empty { color:var(--text-faint); }
+/* [[tabview]] */
+.wikidot-live-tabs { display:flex; flex-wrap:wrap; gap:2px; margin:0 0 .3em; border-bottom:1px solid var(--background-modifier-border); font:var(--font-ui-small,13px)/1.9 var(--font-interface); text-align:left; }
+.wikidot-live-tab { padding:0 .8em; color:var(--text-muted); border:1px solid transparent; border-bottom:0; border-radius:var(--radius-s,5px) var(--radius-s,5px) 0 0; cursor:pointer; }
+.wikidot-live-tab:hover { color:var(--text-normal); }
+.wikidot-live-tab.is-active { color:var(--text-normal); background:var(--background-primary); border-color:var(--background-modifier-border); margin-bottom:-1px; }
+.wikidot-preview { flex:1; width:100%; min-width:0; border:0; background:var(--background-primary); }
+.flipiris-wikidot[data-layout="source"] .wikidot-preview, .flipiris-wikidot[data-layout="rich"] .wikidot-preview, .flipiris-wikidot[data-layout="preview"] .wikidot-native-editor { display:none; }
+.flipiris-wikidot:not([data-layout="preview"]) .wikidot-toolbar { display:none; }
+.view-action[data-wikidot-mode].is-active { color:var(--text-accent); }
+.wikidot-warnings { padding:8px 14px; font-size:var(--font-ui-small); border-bottom:1px solid var(--background-modifier-border); max-height:160px; overflow:auto; color:var(--text-muted); }
+.wikidot-warnings[hidden] { display:none; }
+.wikidot-warnings summary { cursor:pointer; }
+@media(max-width:700px) { .wikidot-native-editor.markdown-source-view.mod-cm6 { padding:var(--mobile-page-margin,24px); } }
+
+.wikidot-native-editor .wd-live-sup { vertical-align:super; font-size:.8em; }
+.wikidot-native-editor .wd-live-sub { vertical-align:sub; font-size:.8em; }
+.wikidot-native-editor .wd-live-size { line-height:inherit; }
+.wikidot-native-editor .wd-live-unmatched { color:var(--text-error); text-decoration:underline wavy var(--text-error); }
+
+/* Functional wiki controls, independent of generic div frames. */
+.wikidot-live-collapse { display:inline-block; padding:.2em 0; color:var(--link-color,var(--text-accent)); cursor:pointer; font-size:.95em; }
+.wikidot-live-collapse:hover { text-decoration:underline; }
+.wikidot-live-image { display:inline-block; max-width:100%; vertical-align:middle; cursor:pointer; }
+.wikidot-live-image img { display:block; max-width:100%; height:auto; }
+.wikidot-live-tab { outline-offset:2px; }
+
+/* Shared rhythm for actual block boundaries, not individual source lines. */
+.wikidot-native-editor .cm-line.wd-live-block-start { margin-top:.75em !important; }
+.wikidot-native-editor .cm-line.wd-live-block-end { margin-bottom:.75em !important; }
+.wikidot-native-editor .wikidot-live-table { display:block; max-width:100%; overflow-x:auto; padding:2px; font-family:var(--editor-serif,var(--font-text)); font-size:var(--font-text-size); line-height:1.6; text-align:left; }
+.wikidot-live-table table { border-collapse:collapse; width:max-content; min-width:100%; margin:0; }
+.wikidot-live-table th,.wikidot-live-table td { border:1px solid var(--background-modifier-border); padding:.55em .85em; min-width:5em; max-width:28em; overflow-wrap:anywhere; vertical-align:top; cursor:text; }
+.wikidot-live-table th { font-weight:var(--bold-weight,700); background:var(--background-secondary); }
+.wikidot-live-table tr:nth-child(even) td { background:color-mix(in srgb,var(--background-secondary) 45%,transparent); }
+.wikidot-live-table td:hover,.wikidot-live-table th:hover { background:var(--background-modifier-hover); }
+.wikidot-live-table td:focus-visible,.wikidot-live-table th:focus-visible { outline:2px solid var(--interactive-accent); outline-offset:-2px; }
+.wikidot-live-table img { max-width:100%; }
+
+/* Blank source lines retain measurable, clickable native editor space. */
+.wikidot-native-editor .cm-line.wd-live-empty-line { min-height:1lh; cursor:text; }
+.wikidot-native-editor .wikidot-live-layout { display:block; position:relative; contain:layout; isolation:isolate; text-align:left; white-space:normal; font-family:var(--editor-serif,var(--font-text)); font-size:var(--font-text-size); line-height:var(--pref-body-line-height,var(--line-height-normal)); }
+.wikidot-live-layout p { margin:0 0 .8em; }
+.wikidot-live-layout p:last-child { margin-bottom:0; }
+.wikidot-live-layout img { max-width:100%; height:auto; }
+.wikidot-live-layout.is-positioned { min-height:5em; }
+.wikidot-live-layout [style*="grid-template"] > * { min-width:0; overflow-wrap:anywhere; }
+
+/* Keep real blank lines, not empty display rows left by hidden tags. */
+.wikidot-native-editor .cm-line.wd-live-hidden-tag-row { height:0 !important; min-height:0 !important; line-height:0 !important; font-size:0 !important; padding-block:0 !important; margin-block:0 !important; border:0 !important; }
+
+.wikidot-selection-menu { position:fixed; z-index:10000; display:grid; grid-template-columns:repeat(5,auto); gap:3px; max-width:min(540px,calc(100vw - 16px)); padding:5px; border:1px solid var(--background-modifier-border); border-radius:8px; background:var(--background-primary); box-shadow:0 4px 18px #0003; font:var(--font-ui-small,13px)/1.4 var(--font-interface); }
+.wikidot-selection-menu button { height:28px; padding:3px 8px; margin:0; box-shadow:none; background:transparent; font:inherit; }
+.wikidot-selection-menu button:hover { background:var(--background-modifier-hover); }
+.wikidot-selection-menu button:focus-visible { outline:2px solid var(--interactive-accent); outline-offset:-2px; }
+
+.flipiris-wikidot { --wd-syntax-font:"Maple Mono NL",var(--font-monospace),monospace; }
+.wikidot-native-editor .wd-source-tag,
+.wikidot-native-editor .wd-live-syntax,
+.wikidot-native-editor .wd-live-tag-source,
+.wikidot-live-box-label { font-family:var(--wd-syntax-font); }
+
+@media(max-width:480px) { .wikidot-selection-menu { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+
+/* A hidden closing tag still owns the lower edge of an empty div. */
+.wikidot-native-editor .cm-line.wd-live-hidden-tag-row.wd-live-box-bottom { border-left:1px solid var(--wd-box-border) !important; border-right:1px solid var(--wd-box-border) !important; border-bottom:1px solid var(--wd-box-border) !important; }
+.wikidot-selection-menu,.wikidot-selection-menu * { user-select:none; -webkit-user-select:none; }
+
+.wikidot-native-editor .cm-content ::selection,.wikidot-native-editor .cm-content::selection { background:var(--text-selection); }
+
+/* Labels reserve a slim header rather than floating into nested prose. */
+.wikidot-live-layout { max-width:100%; overflow:auto; overflow-wrap:anywhere; padding:4px; }
+.wikidot-live-layout.is-framed div[data-wd-label] { position:relative; outline:1px dashed var(--wd-box-border); outline-offset:-1px; border-radius:3px; padding-top:1.2rem !important; min-width:0; }
+.wikidot-live-layout.is-framed > div[data-wd-label] { outline-style:solid; border-radius:var(--radius-s,4px); }
+.wikidot-live-layout.is-framed div[data-wd-label]::before { content:attr(data-wd-label); position:absolute; top:0; right:.4rem; max-width:calc(100% - .8rem); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--text-faint); font:11px/1.2rem var(--wd-syntax-font); pointer-events:none; user-select:none; -webkit-user-select:none; }
+.wikidot-live-layout.is-framed div[data-wd-label] > div[data-wd-label] { margin-inline:.5rem; }
+.wikidot-live-layout [style*="display:grid"] > *, .wikidot-live-layout [style*="display:flex"] > * { min-width:0; }
+/* Include cache manager */
+.wikidot-include-manager { width:min(760px,92vw); }
+.wikidot-manager-bar { display:flex; gap:8px; margin:.6em 0; }
+.wikidot-manager-bar input { flex:1; }
+.wikidot-manager-list { max-height:46vh; overflow-y:auto; border:1px solid var(--background-modifier-border); border-radius:var(--radius-m,8px); }
+.wikidot-manager-row { display:flex; gap:8px; align-items:center; padding:6px 10px; border-bottom:1px solid var(--background-modifier-border); }
+.wikidot-manager-row:last-child { border-bottom:none; }
+.wikidot-manager-row.is-used { background:var(--background-secondary); }
+.wikidot-manager-info { flex:1; min-width:0; }
+.wikidot-manager-name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:var(--wd-syntax-font,var(--font-monospace)); font-size:var(--font-ui-small); }
+.wikidot-manager-meta { color:var(--text-muted); font-size:var(--font-ui-smaller); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.wikidot-manager-actions { display:flex; gap:4px; flex-shrink:0; }
+.wikidot-manager-empty, .wikidot-manager-status { color:var(--text-muted); padding:6px 10px; font-size:var(--font-ui-small); }
+.wikidot-manager-source { max-height:60vh; overflow:auto; white-space:pre-wrap; font-family:var(--wd-syntax-font,var(--font-monospace)); font-size:var(--font-ui-small); }
+
+/* Joined nested openers get separate header rows above editable prose. */
+.wikidot-native-editor .wikidot-live-box-label { float:none; position:absolute; top:var(--wd-label-top,0px); right:8px; max-width:calc(100% - 20px); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin:0; font-size:11px; line-height:16px; }
